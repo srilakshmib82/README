@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<style>
+       body {
+            overflow-x: hidden;
+            background-image: url('24.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;     
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            box-shadow:0 4px 6px rgba(0,0,0,0.1);
+            background:rgba(255,255,255,0.1);
+            padding: 20px;
+            color: antiquewhite;
+            border-radius:25px 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            backdrop-filter: blur(2px);
+        }
+        .fieldset
+        {
+            border-radius:25px 25px;
+        }
+</style>
+<body>
+    <form onsubmit="return false;" class="container">
+        <fieldset class="fieldset">
+            <legend>Login Details</legend>
+            <p>Name</p>
+            <input type="text" name="First name" placeholder="Enter Your Name" id="Nameinput">
+            <br>
+            <p>Password</p>
+            <input type="password" name="PASSWORD" placeholder="Enter password" id="Password">
+            <br><br>
+        </fieldset>
+        <br>
+        <button type="button" onclick="PrintName()">SUBMIT</button>
+        <br>
+        <p id="output"></p>
+        <script>
+            function PrintName() {
+                let Username = document.getElementById("Nameinput").value.trim();
+                let passwd = document.getElementById("Password").value;
+
+                // Check if fields are empty
+                if (Username === "" || passwd === "") {
+                    document.getElementById("output").innerHTML = "Please enter your details";
+                    return;
+                }         
+                
+                // Password length check
+                if (passwd.length < 6) {
+                    document.getElementById("output").innerHTML = "Password must be at least 6 characters long.";
+                    return;
+                }
+
+                // Validate username and password
+                if (Username === "aishu" && passwd === "1234567") {
+                    alert("Login Successfully!");
+                    location.href = " dancehome.html"; // Redirect or perform an action
+                } else {
+                    document.getElementById("output").innerHTML = "Invalid username or password.";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>
+

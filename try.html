@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: burlywood;
+    }
+.div
+{
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border:3px solid black;
+}
+input[type="text"], 
+input[type="email"], 
+input[type="tel"]
+
+ {
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    border-width: 2px;
+}
+select,textarea{
+    border-radius: 10px 10px;
+    border:2px solid black;
+    height: 40px;
+    width: 300px;
+}
+input[type="submit"]
+{
+    background-color: darkgreen;
+    font-weight: 400;
+    color:white;
+    height:30px;
+    width:150px;
+    margin-left:60px;
+}
+body
+    { 
+    
+        height:100%;
+        margin:0;
+        padding:0;
+        overflow-x: hidden;
+     background-image: url('24.jpg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     
+    }
+   
+        ul{
+          
+           
+            list-style-type: none;
+            display: flex;
+            justify-content: space-evenly;
+            padding:0;
+        }
+        li 
+        {
+            
+           color:burlywood;
+        }
+        li a{
+            
+            
+            height:40px;
+            width:200px;
+    
+            color: black;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        li a:hover
+        {
+           
+            color: cadetblue;
+        }
+        .navbar
+        {
+            background-color: #FFDf00;
+          
+            margin:0;
+        }
+        .div
+        {
+            background:rgba(255,255,255,0.1);
+            border-radius: 25px 25px;
+            box-shadow:0 4px 6px rgba(0,0,0,0.1);
+          text-align: center;
+          backdrop-filter: blur(30px);
+            padding:100px;
+            color:white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width:300px;
+            margin-left: 475px;
+         
+          margin-top:150px;
+
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .footer
+    {
+        text-align: center;
+        background-color:black;
+        color:cadetblue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+</style>
+<body>
+    <nav class="navbar">
+        <div>
+            <ul>
+               
+                <li><a href="dancehome.html">Home</a></li>
+                <li><a href="danceabout.html">About</a></li>
+                <li><a href="danceclass.html">Classes</a></li>
+                <li><a href="try.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav><div class="div">
+    <form action="">
+        <h3>First Name*</h3>
+        <input type="text" name="fname" required>
+        <h3>Email Address*</h3>
+        <input type="email" name="email" required>
+        <h3>Lastname</h3>
+        <input type="text" name="lname">
+        <h3>Phone Number*</h3>
+        <input type="tel" name="phone" required>
+        <h3>Subject</h3>
+        <input type="text">
+        <h3>Reason of inquiry(Conditional Logic demo)*</h3>
+        <select name="reason" >
+            <option value="I want to try free class" selected>I want to try free class</option>
+            <option value="I have general classes">I have general classes</option>
+        </select>
+        <h3>Which class do you wish to try?*</h3>
+        <select name="classtotry" >
+            <option value="Hip Hop" selected>Hip Hop</option>
+            <option value="Bharatnatyam">Bharatnatyam</option>
+        </select>
+        <br>
+        <h3>Message*</h3>
+        <textarea name="message" rows="25" cols="30"></textarea>
+        <br>
+
+        <br>
+        <input type="submit" value="Submit Your Message">
+    </form>
+</div>
+<footer class="footer">
+    <h1>Discover the Art of Dance</h1>
+    <p>Whether you prefer ballet, jazz, or hip hop , we have a class for </p>
+<button type="button" onclick="view()" style="color:black;">View our dance classes-></button>
+<h1>Dance Studio</h1>
+<h3>Company</h3>
+<h3>News</h3>
+<h3>Contact</h3>
+<h3>Privacy Policy </h3>
+<h3>Terms of use</h3>
+<h3>Press</h3>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Add font awesome icons -->
+        <a href="https://www.facebook.com/YourOrganization" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/YourOrganization" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/YourOrganization" class="fa fa-instagram"></a>
+        <a href="https://plus.google.com/YourOrganization" class="fa fa-google"></a>
+<p>Subscribe to our newsletter</p>
+<h4>© 2012 - 2023 • Avada is a Website Builder for WordPress and eCommerce • All Rights Reserved • Developed by ThemeFusion</h4>
+</footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Online Food Shop</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            background-image: url('24.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;     
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            box-shadow:0 4px 6px rgba(0,0,0,0.1);
+            background:rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius:25px 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            backdrop-filter: blur(2px);
+        }
+        h2 {
+            color: #e74c3c;
+        }
+        .input-group {
+            margin: 10px 0;
+            text-align: left;
+            color:white;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            width: 100%;
+            background: #e74c3c;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #c0392b;
+        }
+        .login-link {
+            margin-top: 10px;
+            display: block;
+            color: #555;
+            font-size: 14px;
+            color: antiquewhite;
+        }
+        .login-link a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <p>Captcha Verification</p>
+                <p id="captcha"></p>
+                <input type="text" id="captchainput" name="captcha" placeholder="ENTER CAPTCHA">
+                <br><br>
+                <button type="button" onclick="validateCaptcha()">VERIFY CAPTCHA</button>
+                <button type="button" onclick="generateCaptcha()">REFRESH CAPTCHA</button>
+                <p id="output"></p>
+            </div>
+            <button type="button" class="btn" onclick="signup()">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <button type="button"><a href="loginn.html">Log in</a></button></p>
+    </div>
+
+    <script>
+        let currcaptcha = "";
+
+        window.onload = generateCaptcha;
+
+        function generateCaptcha() {
+            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            currcaptcha = "";
+            for (let i = 0; i < 6; i++) {
+                currcaptcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById("captcha").innerText = currcaptcha;
+        }
+
+        function validateCaptcha() {
+            const inputcaptcha = document.getElementById("captchainput").value;
+            if (inputcaptcha === currcaptcha) {
+                document.getElementById("output").innerText = "CAPTCHA is verified";
+                document.getElementById("output").style.color = "green";
+            } else {
+                document.getElementById("output").innerText = "CAPTCHA is invalid";
+                document.getElementById("output").style.color = "red";
+            }
+        }
+
+        function signup() {
+            const captchaMessage = document.getElementById("output").innerText;
+            if (captchaMessage === "CAPTCHA is invalid") {
+                alert("Please verify the CAPTCHA before submitting.");
+            } else {
+                // If CAPTCHA is valid, show success message and redirect
+                alert("Signed Up Successfully");
+                window.location.href = "dancehome.html"; // Redirect to task1.html after successful sign up
+            }
+        }
+    </script>
+</body>
+</html>
